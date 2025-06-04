@@ -1,0 +1,68 @@
+[
+  {
+    "title": "HTML",
+    "src": "/logos/html.png",
+    "alt": "HTML",
+    "link": "https://html.com/"
+  },
+  {
+    "title": "CSS",
+    "src": "/logos/css.png",
+    "alt": "CSS",
+    "link": "https://css-tricks.com/"
+  },
+  {
+    "title": "TailwindCSS",
+    "src": "/logos/tailwindcss.png",
+    "alt": "TailwindCSS",
+    "link": "https://tailwindcss.com/"
+  },
+  {
+    "title": "Java",
+    "src": "/logos/java.png",
+    "alt": "",
+    "link": "https://www.java.com/"
+  },
+  {
+    "title": "JavaScript",
+    "src": "/logos/javascript.png",
+    "alt": "JavaScript",
+    "link": "https://www.javascript.com/"
+  },
+  {
+    "title": "ReactJS",
+    "src": "/logos/reactjs.png",
+    "alt": "ReactJS",
+    "link": "https://react.dev/"
+  },
+  {
+    "title": "SpringBoot",
+    "src": "/logos/springboot.png",
+    "alt": "SpringBoot",
+    "link": "https://spring.io/projects/spring-boot"
+  },
+  {
+    "title": "MySQL",
+    "src": "/logos/mysql.png",
+    "alt": "MySQL",
+    "link": "https://www.mysql.com/"
+  },
+  {
+    "title": "MongoDB",
+    "src": "/logos/mongodb.png",
+    "alt": "MongoDB",
+    "link": "https://www.mongodb.com/"
+  },
+  {
+    "title": "Express",
+    "src": "/logos/express.png",
+    "alt": "Express",
+    "link": "https://expressjs.com/"
+  },
+  {
+    "title": "Node.js",
+    "src": "/logos/nodejs.png",
+    "alt": "Node.js",
+    "link": "https://nodejs.org/"
+  }
+]

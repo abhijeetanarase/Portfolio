@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 10, 10, 10;
+  --card-background: 38, 38, 38;
+  --text: 245, 245, 245;
+  --subtext: 163, 163, 163;
+  --button: 82, 0, 204;
+  --button-hover: 92, 0, 230;
+  --button-active: 71, 0, 179;
+  --border: 64, 64, 64;
+}
+
+body {
+  background-color: rgba(var(--background));
+}

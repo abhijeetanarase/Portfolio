@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Developer Portfolio (v1)",
+    "desc": "My first ever Developer Portfolio. Developed with basic ReactJS and TailwindCSS.",
+    "github": "https://github.com/ashwnkumar/ashwinkumar-dev",
+    "link": "https://v1-ashwinkumar-dev.web.app/",
+    "completed": true
+  },
+  {
+    "title": "frames by ashwn (v1)",
+    "desc": "My first 'full fledged' ReactJS project. Learnt navigation and TailwindCSS with this project. Hardcoded the image adding process.",
+    "tech": ["ReactJS", "TailwindCSS"],
+    "github": "https://github.com/ashwnkumar/frames-by-ashwn",
+    "link": "https://frames-by-ashwn-55a7a.web.app",
+    "completed": true
+  },
+
+  {
+    "title": "The Gourmet Slice",
+    "desc": "Collaborated with a fellow developer and contributed to the Front End of this restaurant website project.",
+    "tech": ["ReactJS", "TailwindCSS"],
+    "github": "https://github.com/Akash3731/Gourmet-Slice",
+
+    "completed": true
+  },
+  {
+    "title": "frames by ashwn ",
+    "desc": "New and updated frames by ashwn project. Implemented a backend database for a better photo adding functionality.",
+    "tech": ["ReactJS", "TailwindCSS"],
+
+    "completed": false
+  },
+  {
+    "title": "Pixls",
+    "desc": "A social media website project based on Instagram that I made to learn more about backend and integrating databases with ReactJS.",
+    "tech": ["ReactJS", "TailwindCSS"],
+
+    "completed": false
+  }
+]
