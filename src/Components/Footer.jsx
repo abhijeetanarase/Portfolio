@@ -53,7 +53,7 @@ const Footer = () => {
               to="#home"
               className="text-text font-medium hover:text-neutral-500 transition-colors"
             >
-              yours truly.
+             Abhijeet Anarase
             </HashLink>
           </p>
           <p>
@@ -97,11 +97,11 @@ const Footer = () => {
             <p>
               Hosted using{" "}
               <a
-                href="https://firebase.google.com/"
+                href="https://vercel.com/"
                 target="_blank"
                 className="text-text font-medium"
               >
-                Firebase.
+                Vercel
               </a>
             </p>
           </p>

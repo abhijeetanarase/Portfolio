@@ -1,6 +1,7 @@
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import CustomCursor from "./Components/CustomCursor";
+import Experiences from "./Components/Experiences";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Experiences/>
       <Projects />
       <Contact />
       <Footer />

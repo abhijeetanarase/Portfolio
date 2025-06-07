@@ -1,75 +1,171 @@
-import { faGit, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowUpRightFromSquare,
   faCircle,
-  faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, desc, link, github, completed, image }) => {
+const ProjectCard = ({ title, desc, link, github, completed, image, tech = [] }) => {
   const statusClass = {
-    completed: "bg-green-500/10 border-green-600/50 text-green-600",
-    ongoing: "bg-yellow-500/10 border-yellow-600/50 text-yellow-600",
+    completed: "bg-emerald-900/50 text-emerald-400",
+    ongoing: "bg-amber-900/50 text-amber-400",
+  };
+
+  const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  };
+
+  const hoverVariants = {
+    hover: {
+      y: -5,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
-    <div>
-      <div className="max-w-sm bg-card-background border border-border rounded-lg shadow  lg:hover:scale-105 transition-transform duration-500">
-        {/* <a href="https://ashwinkumar-dev.web.app">
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={cardVariants}
+      whileHover="hover"
+      className="w-full max-w-md overflow-hidden rounded-2xl bg-gray-900 shadow-lg ring-1 ring-gray-800 transition-all duration-300"
+    >
+      {/* Project Screenshot */}
+      {image && (
+        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
           <img
-            className="rounded-t-lg"
-            src="/projects/Screenshot_6.jpg"
-            alt=""
+            src={image}
+            alt={`Screenshot of ${title} project`}
+            className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+            loading="lazy"
           />
-        </a> */}
-        <div className="p-5">
-          <a href={link} target="_blank">
-            <h2 className="mb-5 text-2xl flex  gap-2 font-medium tracking-tight text-text ">
-              {title}{" "}
-              {link && (
-                <FontAwesomeIcon
-                  icon={faUpRightFromSquare}
-                  size="2xs"
-                  className="text-subtext"
-                />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+      )}
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4 mb-4">
+          <div>
+            <motion.h3
+              whileHover={{ x: 2 }}
+              className="text-xl font-bold text-white group"
+            >
+              {(link || github) ? (
+                <a
+                  href={link || github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 hover:text-purple-400 transition-colors"
+                >
+                  {title}
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    size="xs"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-current"
+                  />
+                </a>
+              ) : (
+                title
               )}
-            </h2>
-          </a>
-          <p
-            className={`border-2 text-xs gap-2 flex items-center w-max px-2 py-1 rounded-full mb-2 font-medium ${
-              completed ? statusClass.completed : statusClass.ongoing
-            }`}
-          >
-            <FontAwesomeIcon icon={faCircle} size="2xs" />{" "}
-            {completed ? "Completed" : "Ongoing"}
-          </p>
-          <p className="mb-3 font-normal text-subtext cursor-default">{desc}</p>
-          <div className="space-x-3">
-            {link && (
-              <a
-                target="_blank"
-                href={link}
-                className="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-center text-background lg:text-text bg-text lg:bg-card-background border border-text rounded-lg  transition-all duration-500 lg:hover:text-background lg:hover:bg-text"
-              >
-                Project Link
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            )}
-            {github && (
-              <a
-                target="_blank"
-                href={github}
-                className="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-center text-background lg:text-text bg-text lg:bg-card-background border border-text rounded-lg  transition-all duration-500 lg:hover:text-background lg:hover:bg-text"
-              >
-                GitHub
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            )}
+            </motion.h3>
           </div>
+
+          <span
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${statusClass[completed ? "completed" : "ongoing"]}`}
+          >
+            <FontAwesomeIcon icon={faCircle} size="2xs" />
+            {completed ? "Completed" : "In Progress"}
+          </span>
+        </div>
+
+        <p className="mb-6 text-gray-400 leading-relaxed">
+          {desc}
+        </p>
+
+        {/* Tech Stack */}
+        {tech.length > 0 && (
+          <div className="mb-6">
+            <h4 className="text-sm font-medium text-gray-500 mb-2">
+              Technologies Used
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {tech.map((technology, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-800 text-gray-300"
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="flex gap-3">
+          {link && (
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg text-sm font-medium hover:shadow-md transition-all"
+            >
+              Live Preview
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+            </motion.a>
+          )}
+
+          {github && (
+            typeof github === 'string' ? (
+              <motion.a
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-800 text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+                Source Code
+              </motion.a>
+            ) : Array.isArray(github) ? (
+              github.map((repo, index) => (
+                <motion.a
+                  key={index}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-800 text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                  {github.length > 1 ? `Source ${index + 1}` : 'Source Code'}
+                </motion.a>
+              ))
+            ) : null
+          )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

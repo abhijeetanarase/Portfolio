@@ -22,6 +22,7 @@ function Projects() {
                 link={project.link}
                 github={project.github}
                 completed={project.completed}
+                tech = {project.tech}
               />
             ))}
         </div>

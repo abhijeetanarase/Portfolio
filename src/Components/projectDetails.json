@@ -1,40 +1,49 @@
 [
   {
-    "title": "Developer Portfolio (v1)",
+    "title": "Developer Portfolio",
     "desc": "My first ever Developer Portfolio. Developed with basic ReactJS and TailwindCSS.",
-    "github": "https://github.com/ashwnkumar/ashwinkumar-dev",
-    "link": "https://v1-ashwinkumar-dev.web.app/",
+    "github": "https://github.com/abhijeetanarase/Portfolio.git",
+    "link": "https://abhijeetanarase.vercel.app/",
+    "completed": true,
+    "tech": [
+    "React",
+    "TailwindCSS"]
+
+  },
+ {
+  "title": "Quick Ping (Chat App)",
+  "desc": "A real-time chat application built with the MERN stack. Features include:\n• Instant messaging with WebSocket technology\n• User authentication (JWT and Google OAuth) \n• Responsive TailwindCSS design\n• MongoDB message history\n• REDUX for state management",
+  "github": "https://github.com/abhijeetanarase/ChatApp.git",
+  "link": "https://quickping.vercel.app",
+  "tech": [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Socket.io",
+    "JWT for authentication",
+    "Google OAuth",
+    "TailwindCSS",
+    "Redux"
+  ],
+  "completed": true
+}
+,
+  {
+    "title": "One Box (Email Manager)",
+    "desc": "A full-stack email management system built with the MERN stack, featuring IMAP/SMTP integration for real-time email synchronization and DeepSeek API-powered AI suggested replies. Key functionalities include inbox organization, multi-account support, and smart reply generation to streamline email workflows.",
+   "tech": [
+    "MongoDB",
+    "Express.js",
+    "ReactJS",
+    "TailwindCSS",
+    "Node.js",
+    "DeepSeek API (AI-powered reply suggestions)",
+    "Websockets"
+  ],
+    "github": ["https://github.com/abhijeetanarase/email-manager-backend.git" , "git@github.com:abhijeetanarase/email-manager-frontend.git"],
+    "link" : "https://theonebox.vercel.app",
+ 
     "completed": true
-  },
-  {
-    "title": "frames by ashwn (v1)",
-    "desc": "My first 'full fledged' ReactJS project. Learnt navigation and TailwindCSS with this project. Hardcoded the image adding process.",
-    "tech": ["ReactJS", "TailwindCSS"],
-    "github": "https://github.com/ashwnkumar/frames-by-ashwn",
-    "link": "https://frames-by-ashwn-55a7a.web.app",
-    "completed": true
-  },
-
-  {
-    "title": "The Gourmet Slice",
-    "desc": "Collaborated with a fellow developer and contributed to the Front End of this restaurant website project.",
-    "tech": ["ReactJS", "TailwindCSS"],
-    "github": "https://github.com/Akash3731/Gourmet-Slice",
-
-    "completed": true
-  },
-  {
-    "title": "frames by ashwn ",
-    "desc": "New and updated frames by ashwn project. Implemented a backend database for a better photo adding functionality.",
-    "tech": ["ReactJS", "TailwindCSS"],
-
-    "completed": false
-  },
-  {
-    "title": "Pixls",
-    "desc": "A social media website project based on Instagram that I made to learn more about backend and integrating databases with ReactJS.",
-    "tech": ["ReactJS", "TailwindCSS"],
-
-    "completed": false
   }
-]
+ ]

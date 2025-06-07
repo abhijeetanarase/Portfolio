@@ -125,7 +125,8 @@ function Home() {
             {[
               { icon: faCode, text: "Frontend", color: "text-blue-300" },
               { icon: faServer, text: "Backend", color: "text-purple-300" },
-              { text: "React/Node", color: "text-green-300" },
+              { text: "MERN stack", color: "text-green-300" },
+              { text: "Spring Boot", color: "text-purple-300" },
               { text: "DSA", color: "text-amber-300" },
             ].map((item, index) => (
               <motion.div
@@ -161,7 +162,7 @@ function Home() {
             {[
               { icon: faGithub, url: "https://github.com/abhijeetanarase", color: "hover:text-gray-300" },
               { icon: faLinkedin, url: "https://www.linkedin.com/in/abhijit-anarase-a7373a267/", color: "hover:text-blue-400" },
-              { icon: faEnvelope, url: "mailto:abhijitanarase.skn.it@.gmail.com", color: "hover:text-red-400" },
+              // { icon: faEnvelope, url: "mailto:abhijitanarase.skn.it@.gmail.com", color: "hover:text-red-400" },
             ].map((item, index) => (
               <motion.a
                 key={index}
